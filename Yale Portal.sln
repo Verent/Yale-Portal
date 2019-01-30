@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yale.Portal.Server", "Yale.Portal.Server\Yale.Portal.Server.csproj", "{35A24C29-F8C3-4DCA-8759-C46FF3EC2525}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yale.Portal.App", "Yale.Portal.App\Yale.Portal.App.csproj", "{5AF26EB3-B582-49DE-8D36-435337DE2BBE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35A24C29-F8C3-4DCA-8759-C46FF3EC2525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35A24C29-F8C3-4DCA-8759-C46FF3EC2525}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35A24C29-F8C3-4DCA-8759-C46FF3EC2525}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35A24C29-F8C3-4DCA-8759-C46FF3EC2525}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AF26EB3-B582-49DE-8D36-435337DE2BBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AF26EB3-B582-49DE-8D36-435337DE2BBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AF26EB3-B582-49DE-8D36-435337DE2BBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AF26EB3-B582-49DE-8D36-435337DE2BBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3DFD5B74-3070-497E-B724-060C97BE8027}
+	EndGlobalSection
+EndGlobal

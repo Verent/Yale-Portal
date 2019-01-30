@@ -1,0 +1,45 @@
+﻿<div class="top-row pl-4 navbar navbar-dark">
+    <button class="navbar-toggler" onclick=@ToggleNavMenu>
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+
+<div class=@(collapseNavMenu ? "collapse" : null) onclick=@ToggleNavMenu>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <NavLink class="nav-link" href="" Match=NavLinkMatch.All>
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </li>
+
+        <li class="nav-item px-3">
+            <div class="separator">
+                <span class="oi oi-beaker">&nbsp</span>Examples
+            </div>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="console">
+                <span class="oi oi-terminal" aria-hidden="true"></span> Yale terminal
+            </NavLink>
+        </li>
+        @*<li class="nav-item px-3">
+            <NavLink class="nav-link" href="currency">
+                <span class="oi oi-euro" aria-hidden="true"></span> Currency
+            </NavLink>
+        </li>*@
+        <li class="nav-item">
+            <NavLink class="nav-link" href="about">
+                About
+            </NavLink>
+        </li>
+    </ul>
+</div>
+
+@functions {
+bool collapseNavMenu = true;
+
+void ToggleNavMenu()
+{
+    collapseNavMenu = !collapseNavMenu;
+}
+}
