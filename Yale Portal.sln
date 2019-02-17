@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.271
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28531.58
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yale.Portal.Server", "Yale.Portal.Server\Yale.Portal.Server.csproj", "{35A24C29-F8C3-4DCA-8759-C46FF3EC2525}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yale.Portal.Server", "Yale.Portal.Server\Yale.Portal.Server.csproj", "{35A24C29-F8C3-4DCA-8759-C46FF3EC2525}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yale.Portal.App", "Yale.Portal.App\Yale.Portal.App.csproj", "{5AF26EB3-B582-49DE-8D36-435337DE2BBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yale.Portal.App", "Yale.Portal.App\Yale.Portal.App.csproj", "{5AF26EB3-B582-49DE-8D36-435337DE2BBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

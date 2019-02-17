@@ -8,7 +8,7 @@ namespace Yale.Portal.App
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<YaleService>();
+            services.AddScoped<YaleService>();
         }
 
         public void Configure(IBlazorApplicationBuilder app)
