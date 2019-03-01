@@ -13,7 +13,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Browser" Version="0.7.0" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="0.7.0" PrivateAssets="all" />
-    <PackageReference Include="Yale" Version="0.0.0.9-alpha" />
+    <PackageReference Include="Yale" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
