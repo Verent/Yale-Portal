@@ -1,10 +1,10 @@
 ﻿<div class="top-row pl-4 navbar navbar-dark">
-    <button class="navbar-toggler" onclick=@ToggleNavMenu>
-        <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" >
+        <span class="navbar-toggler-icon" @onclick="ToggleNavMenu"></span>
     </button>
 </div>
 
-<div class=@(collapseNavMenu ? "collapse" : null) onclick=@ToggleNavMenu>
+<div class=@(collapseNavMenu ? "collapse" : null) @onclick=ToggleNavMenu>
     <ul class="nav flex-column">
         <li class="nav-item">
             <NavLink class="nav-link" href="" Match=NavLinkMatch.All>
@@ -35,11 +35,12 @@
     </ul>
 </div>
 
-@functions {
-bool collapseNavMenu = true;
+@code {
+    bool collapseNavMenu = true;
 
-void ToggleNavMenu()
-{
-    collapseNavMenu = !collapseNavMenu;
-}
+
+    void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
 }

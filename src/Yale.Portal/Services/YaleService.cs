@@ -7,7 +7,6 @@ namespace Yale.Portal.Services
 {
     public class YaleService : ComputeInstance
     {
-
         public int MaxExpressions = 5;
         public int MaxVariables = 5;
 
