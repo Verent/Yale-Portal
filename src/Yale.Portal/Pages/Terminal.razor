@@ -68,22 +68,22 @@
     <div class="row" style="padding-left:15px">
         <div class="col-sm-12">
             <h2>How to use:</h2>
-            <p>Follow these steps to get a basic understanding for how yale evaluates expressions.</p>
+            <p>Follow these steps to get a basic understanding of how yale evaluates expressions.</p>
             <h5>Add a variable</h5>
             <p>
-                To add a variable just type <code>x=4, x=3.4 or x=hello</code> where x is the name of the variable, and what comes next is the value.
+                To add a variable type <code>x=4, x=3.4 or x=hello</code> where x is the name of the variable, and what comes next is the value.
             </p>
 
             <h5>
                 Add an expression
             </h5>
             <p>
-                An expression lets you create more advanced functions. These are usually based on variables. Expressions are declaired using the :, like <code>e:2 * x</code>, where x references a variable.
-                In this case <code>e</code> would be depend on <code>x</code>, and if <code>x</code> is updated so would the result of <code>e</code>. Expression can depend on either variables or other expressions.
+                Expressions let you create advanced functions, usually including values in variables. On this demo page, expressions are declared using the :, like <code>e:2 * x</code>, where x references a variable.
+                In this case, <code>e</code> would depend on <code>x</code>, and if <code>x</code> is updated, so would the result of <code>e</code>. Expression can depend on either variables or other expressions.
             </p>
 
             <p>
-                In this example application expressions can be
+                In this example, application expressions can be
                 <ul>
                     <li>Mathematic expression like <code>e:sqrt(x), e:x^2, e:x+5 or e:x/0.5.</code></li>
                     <li>Boolean like <code>e:x=x, e:x/4 = 1 or e:x=4 AND y=5</code></li>
@@ -96,11 +96,12 @@
                 In a custom application complex object can be manipulated and the instance can import static functions and constants.
             </p>
 
-            <h5>Referencing and dependency handeling</h5>
+            <h5>Referencing and dependency handling</h5>
             <p>
-                Yale handels referenced values and expressions in on of 2 ways. Either by directly updating dependent expressions or lazy updating preceding expressions. These are used in different senarios depending.
-                Lazy updating is faster if values are updated many times between each calculation.
-                Direct updateing can be used to update ui element directly (like the variable and expressions tables on this page)
+                Referenced values and expressions are handled in one of 2 ways. 
+                Either by directly updating dependent expressions or lazy updating preceding expressions. 
+                These are used in different scenarios, depending. Lazy updating is faster if values are updated many times between each calculation. 
+                Direct updating can be used to update UI element directly (like the variable and expressions tables on this page)
             </p>
         </div>
     </div>
