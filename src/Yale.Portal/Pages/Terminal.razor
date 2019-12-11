@@ -1,10 +1,7 @@
 ﻿@page "/terminal"
 
-@using System.Text.RegularExpressions
 @using Yale.Portal.Services
 @using System.Linq
-@using Microsoft.JSInterop
-@using System.Collections.Generic
 
 @inject YaleService service
 
@@ -17,14 +14,14 @@
         </div>
     </div>
     <div class="row">
-        <div id="terminal" class="col-sm-8" onclick="@Focus">
-            @foreach (var line in _history)
+        <div id="terminal" class="col-sm-8" @onclick="Focus">
+            @foreach (var line in history)
             {
                 <div>@line</div>
             }
             <div class="input">
                 <label>yale:~$</label>
-                <input ref="consoleInput" type="text" bind="@_inputValue" onkeyup="@KeyUp" />
+                <input ref="consoleInput" type="text" @bind="inputValue" @onkeyup="KeyUp" />
             </div>
         </div>
         <aside class="col-sm-4">
@@ -91,7 +88,7 @@
                     <li>Mathematic expression like <code>e:sqrt(x), e:x^2, e:x+5 or e:x/0.5.</code></li>
                     <li>Boolean like <code>e:x=x, e:x/4 = 1 or e:x=4 AND y=5</code></li>
                     <li>String manipulation: <code>y: "The number is " + x</code></li>
-                    <li>Conditional: <code>If(a < 100; "smal"; "large")</code></li>
+                    <li>Conditional: <code>If(a @("<") 100; "smal"; "large")</code></li>
                 </ul>
             </p>
 
@@ -109,7 +106,7 @@
     </div>
 </div>
 
-@functions {
+@code {
 
     private readonly Regex isValue = new Regex("^[a-zA-Z]+[=][\\w\\s.]+$");
     private readonly Regex isExpression = new Regex("[a-zA-Z]+[:].+$");
@@ -118,31 +115,34 @@
     private int maxHistory = 10;
 
     private int index = -1;
-    private string _inputValue;
+    private string inputValue;
 
-    private List<string> _cmdhistory = new List<string>();
-    private List<string> _history = new List<string>();
+    private List<string> cmdhistory = new List<string>();
+    private List<string> history = new List<string>();
 
-    ElementRef consoleInput;
+    ElementReference consoleInput;
 
     void Focus()
     {
-        JSRuntime.Current.InvokeAsync<object>("focusElement", consoleInput);
+    @*JSRuntime.Current.InvokeAsync<object>("focusElement", consoleInput);*@
     }
 
-    void KeyUp(UIKeyboardEventArgs e)
+    void KeyUp(KeyboardEventArgs  e)
     {
         var key = e.Key;
 
         ConsoleFunctions();
 
         if (e.Key.Equals("Enter") == false) return;
-        var input = _inputValue;
+        var input = inputValue;
         index = -1;
 
-        AddToHistory(_cmdhistory, _inputValue);
+        AddToHistory(cmdhistory, inputValue);
 
-        if (isValue.IsMatch(input)) service.AddValue(input);
+        if (isValue.IsMatch(input))
+        {
+            service.AddValue(input);
+        }
         else if (isEvaluate.IsMatch(input))
         {
             input = service.TryEvaluate(input);
@@ -152,8 +152,8 @@
             input = $"Invalid expression {input}";
         }
 
-        AddToHistory(_history, (input));
-        _inputValue = string.Empty;
+        AddToHistory(history, (input));
+        inputValue = string.Empty;
 
         void AddToHistory(List<string> list, string value)
         {
@@ -166,31 +166,26 @@
 
         void ConsoleFunctions()
         {
-            if (_cmdhistory.Any())
+            if (cmdhistory.Any())
             {
                 if (key.Equals("ArrowUp"))
                 {
-                    index = index == -1 ? _cmdhistory.Count() - 1 : index == 0 ? index : index - 1;
-                    _inputValue = _cmdhistory[index];
+                    index = index == -1 ? cmdhistory.Count() - 1 : index == 0 ? index : index - 1;
+                    inputValue = cmdhistory[index];
                 }
                 if (key.Equals("ArrowDown"))
                 {
-                    if (index == -1 || index + 1 == _cmdhistory.Count())
+                    if (index == -1 || index + 1 == cmdhistory.Count())
                     {
-                        _inputValue = string.Empty;
+                        inputValue = string.Empty;
                     }
                     else
                     {
                         index++;
-                        _inputValue = _cmdhistory[index];
+                        inputValue = cmdhistory[index];
                     }
                 }
             }
         }
-    }
-
-    protected override void OnInit()
-    {
-        service.Variables["Title"] = "Console";
     }
 }
