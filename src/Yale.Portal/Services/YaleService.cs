@@ -66,7 +66,7 @@ namespace Yale.Portal.Services
             {
                 Variables[key] = integer;
             }
-            if (double.TryParse(value, out var number))
+            else if (double.TryParse(value, out var number))
             {
                 Variables[key] = number;
             }
