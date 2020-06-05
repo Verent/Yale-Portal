@@ -70,6 +70,10 @@ namespace Yale.Portal.Services
             {
                 Variables[key] = number;
             }
+            else if (bool.TryParse(value, out var boolean))
+            {
+                Variables[key] = boolean;
+            }
             else
             {
                 Variables[key] = value.ToString();
